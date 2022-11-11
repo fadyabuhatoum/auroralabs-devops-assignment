@@ -16,14 +16,15 @@ pipeline {
         stage ('Docker push') {
             steps {
                 sh "docker push fadyabuhatoum/devops-is-great-aurora-labs"
-                // sh "docker stop devops-is-great ; docker rm devops-is-great"
-                sleep 5
+                sh "docker stop devops-is-great || echo 'already stopped' ; docker rm devops-is-great || echo 'already deleted' "
+                sleep 10 // in order to stop and remove it . 
             }
         }
 
         stage ('Docker Run') {
             steps {
-                sh "docker run fadyabuhatoum/devops-is-great-aurora-labs --name devops-is-great"
+                sh "docker pull fadyabuhatoum/devops-is-great-aurora-labs"
+                sh "docker run --name devops-is-great fadyabuhatoum/devops-is-great-aurora-labs"
             }
         }
     }
