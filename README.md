@@ -17,6 +17,7 @@ aurora labs company - devops engineer position assignment
  
  I tried to use the webhook url in order to initiate nitiate a python job on any merge request .
  But we can not do it , because webhook in github can not get localhost URL. 
+ **If it was possible to use external DNS for jenkins , it could be done with git push/commit/pull/merge instead of running it periodically every 45/30/5 minutes.**
  
  Pictures for this process :
 ![webhook URL ](https://user-images.githubusercontent.com/60876615/201412869-3c6a7e9b-6d95-4ebd-8cca-14ae18ddfd47.jpeg)
